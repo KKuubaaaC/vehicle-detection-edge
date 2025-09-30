@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# Models (opcjonalnie - jeśli za duże)
+# models/*.pth
+# models/*.onnx
+
+# Data
+data/
+*.jpg
+*.png
+!results/**/*.png
+!results/**/*.jpg
+!docs/**/*.png
+
+# IDE
+.vscode/
+.idea/
+*.swp
