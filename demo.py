@@ -1,7 +1,3 @@
-"""
-Car Detection Demo - Edge-Optimized Inference
-Demonstrates ONNX optimization for edge deployment with comprehensive benchmarking.
-"""
 import os
 import time
 import argparse
@@ -12,7 +8,7 @@ from pathlib import Path
 
 
 class CarDetector:
-    """Production-ready car detector with ONNX optimization"""
+    
     
     def __init__(self, model_path, image_size=300):
         self.image_size = image_size
@@ -169,7 +165,7 @@ def main():
     print("=" * 60)
     
     if result:
-        print(f"✓ Car detected!")
+        print(f"  Car detected!")
         print(f"  Confidence: {result['confidence']:.2%}")
         print(f"  Bounding box: {result['box']}")
         print(f"  Inference time: {inference_time:.2f}ms")
@@ -177,7 +173,7 @@ def main():
         visualize_result(image, result, args.output)
         print(f"  Saved to: {args.output}")
     else:
-        print(f"✗ No detection (threshold: {args.threshold})")
+        print(f"  No detection (threshold: {args.threshold})")
         print(f"  Inference time: {inference_time:.2f}ms")
     
     # Benchmark

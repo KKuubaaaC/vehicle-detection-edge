@@ -119,5 +119,5 @@ if __name__ == "__main__":
         result_image.save(args.output)
         print(f"  Saved to: {args.output}")
     else:
-        print(f"\n✗ No car detected (threshold: {args.threshold})")
+        print(f"\n No car detected (threshold: {args.threshold})")
         print(f"  Inference time: {inference_time:.2f}ms")

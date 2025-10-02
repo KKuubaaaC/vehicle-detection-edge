@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  vehicle-detector:
+    build: .
+    image: vehicle-detection-edge:latest
+    container_name: vehicle-detector
+    
+    volumes:
+      - ./models:/app/models:ro
+      - ./data:/app/data:ro
+      - ./results:/app/results:rw
+      - ./test.jpg:/app/test.jpg:ro
+    
+    environment:
+      - PYTHONUNBUFFERED=1
+      - ONNXRUNTIME_FORCE_CPU=1
+    
+    deploy:
+      resources:
+        limits:
+          cpus: '3.5'
+          memory: 2G
+    
+    command: >
+      --model models/vehicle_detector.onnx
+      --image test.jpg
+      --output results/detection_output.jpg
+      --confidence 0.5
+    
+    restart: unless-stopped
+    network_mode: host

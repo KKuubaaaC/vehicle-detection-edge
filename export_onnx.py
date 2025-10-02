@@ -24,4 +24,4 @@ torch.onnx.export(
     opset_version=11
 )
 
-print("✓ Model exported to models/car_detection_model.onnx")
+print("Model exported to models/car_detection_model.onnx")
